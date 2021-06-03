@@ -1,6 +1,15 @@
 # TipeeeGG
 LabyMod addon for Minecraft 1.8.9 that provides GrieferGames donation support for TipeeeStream
 
+## Content
+- [Disclaimer](https://github.com/Pleezon/TipeeeGG/blob/main/README.md#disclaimer)
+- [Setup](https://github.com/Pleezon/TipeeeGG/blob/main/README.md#setup)
+- [Facts 'n features](https://github.com/Pleezon/TipeeeGG/blob/main/README.md#tipeeegg-facts-n-features)
+
+
+
+
+
 ## Disclaimer
 I do not take any responsibility regarding the functionality and / or damage caused by this software. Use at own risk! 
 Contact me or open an issue for any inquiries regarding features or bugs.
