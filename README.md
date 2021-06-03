@@ -28,7 +28,7 @@ More information [here](https://github.com/Pleezon)
 ### API-Key:
 - you'll find your API-Key [here](https://www.tipeeestream.com/dashboard/api-key)
 
-## TipeeeGG-Facts 'n Features
+## Facts 'n Features
 ### Time-bugging Protection
 - TipeeeGG offers seemless protection for streamboss-time-bugging
 ### Quick UUID-Based blocking
