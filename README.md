@@ -3,11 +3,34 @@ LabyMod addon for Minecraft 1.8.9 that provides GrieferGames donation support fo
 
 ## Disclaimer
 I do not take any responsibility regarding the functionality and / or damage caused by this software. Use at own risk!
-
-
+Contact me or open an issue for any inquiries regarding features or bugs.
 
 ## Setup
-### Windows
-      1. download the latest release [here](https://github.com/Pleezon/TipeeeGG/releases)
-      2. navigate to your-Minecraft-installation/LabyMod/Addons-1.8
-      3. paste the previously downloaded jar into the directory
+### Installation
+1. download the latest release [here](https://github.com/Pleezon/TipeeeGG/releases)
+2. navigate to your-Minecraft-installation/LabyMod/Addons-1.8
+3. paste the previously downloaded jar into the directory
+
+### API-Name:
+- visit your TipeeeStream-Dashboard [here](https://www.tipeeestream.com/dashboard/)
+- click on the small arrow at the top right and select "My donation page".
+- copy the username from the URL of your donation page e.g. `https://www.tipeeestream.com/someuser/donation` -> `someuser`
+### API-Key:
+- you'll find your API-Key [here](https://www.tipeeestream.com/dashboard/api-key)
+
+## Features
+### Time-bugging Protection
+- TipeeeGG offers seemless protection for streamboss-time-bugging
+### Quick UUID-Based blocking
+- block any user from participating in less than five seconds
+### Smart Name Tracking
+- nicked players are shown with their real names
+### Customizable
+- customizable conversionrate from ingamemoney to EUR.
+- customizable messages
+- deactivate and activate only what you want to use
+### Automatic Messaging
+- Automatically thank anyone donating
+### Streamboss-Healing
+- This addon supports Streamboss-Healing
+### and much more!
