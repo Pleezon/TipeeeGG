@@ -19,19 +19,22 @@ More information [here](https://github.com/Pleezon)
 ### API-Key:
 - you'll find your API-Key [here](https://www.tipeeestream.com/dashboard/api-key)
 
-## Features
+## TipeeeGG-Facts 'n Features
 ### Time-bugging Protection
 - TipeeeGG offers seemless protection for streamboss-time-bugging
 ### Quick UUID-Based blocking
 - block any user from participating in less than five seconds
 ### Smart Name Tracking
 - nicked players are shown with their real names
-### Customizable
+### fully Customizable
 - customizable conversionrate from ingamemoney to EUR.
 - customizable messages
 - deactivate and activate only what you want to use
 ### Automatic Messaging
-- Automatically thank anyone donating
+- automatically thank anyone donating
 ### Streamboss-Healing
-- This addon supports Streamboss-Healing
-### and much more!
+- this addon supports Streamboss-Healing
+### No delay
+- donations reach the TipeeeStream servers with close to no delay
+### Secure and Open Source
+- no shady account credential logger - you can make shure by yourself!
