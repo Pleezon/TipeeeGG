@@ -26,7 +26,7 @@ More information [here](https://github.com/Pleezon)
 - block any user from participating in less than five seconds
 ### Smart Name Tracking
 - nicked players are shown with their real names
-### fully Customizable
+### Fully Customizable
 - customizable conversionrate from ingamemoney to EUR.
 - customizable messages
 - deactivate and activate only what you want to use
@@ -34,7 +34,7 @@ More information [here](https://github.com/Pleezon)
 - automatically thank anyone donating
 ### Streamboss-Healing
 - this addon supports Streamboss-Healing
-### No delay
+### Fast
 - donations reach the TipeeeStream servers with close to no delay
 ### Secure and Open Source
 - no shady account credential logger - you can make shure by yourself!
