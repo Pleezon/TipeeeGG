@@ -2,8 +2,9 @@
 LabyMod addon for Minecraft 1.8.9 that provides GrieferGames donation support for TipeeeStream
 
 ## Disclaimer
-I do not take any responsibility regarding the functionality and / or damage caused by this software. Use at own risk!
+I do not take any responsibility regarding the functionality and / or damage caused by this software. Use at own risk! 
 Contact me or open an issue for any inquiries regarding features or bugs.
+More information [here](https://github.com/Pleezon)
 
 ## Setup
 ### Installation
