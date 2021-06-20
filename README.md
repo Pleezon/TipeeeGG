@@ -46,4 +46,4 @@ More information [here](https://github.com/Pleezon)
 ### Fast
 - donations reach the TipeeeStream servers with close to no delay
 ### Secure and Open Source
-- no shady account credential logger - you can make shure by yourself!
+- no shady account credential logger - you can make sure by yourself!
