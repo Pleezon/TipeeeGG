@@ -18,21 +18,20 @@ public class TipeeeGG extends LabyModAddon {
     public static ChatQueueHandler chatQueueHandler = new ChatQueueHandler(3.0);
     public static DonationQueueHandler donationQueueHandler = new DonationQueueHandler();
     public static boolean isEnabled = false;
-    public static ConfigHashMap blockedUsers = new ConfigHashMap("blockedUsers",new HashMap<>()); //key: UUID, value: name
+    public static ConfigHashMap blockedUsers = new ConfigHashMap("blockedUsers", new HashMap<>()); //key: UUID, value: name
 
-    public static ConfigInt conversionRate = new ConfigInt("conversionRate",100);
+    public static ConfigInt conversionRate = new ConfigInt("conversionRate", 100);
 
-    public static ConfigString errorMessage = new ConfigString("errorMessage","");
-    public static ConfigString thanksMessage = new ConfigString("thanksMessage","");
-    public static ConfigString blockedMessage = new ConfigString("blockedMessage","");
+    public static ConfigString errorMessage = new ConfigString("errorMessage", "");
+    public static ConfigString thanksMessage = new ConfigString("thanksMessage", "");
+    public static ConfigString blockedMessage = new ConfigString("blockedMessage", "");
 
 
-    public static ConfigString donoName = new ConfigString("donoName","");
-    public static ConfigString donoMessage = new ConfigString("donoMessage","");
+    public static ConfigString donoName = new ConfigString("donoName", "");
+    public static ConfigString donoMessage = new ConfigString("donoMessage", "");
 
-    public static ConfigString apiName = new ConfigString("apiName","");
-    public static ConfigString apiKey = new ConfigString("apiKey","");
-
+    public static ConfigString apiName = new ConfigString("apiName", "");
+    public static ConfigString apiKey = new ConfigString("apiKey", "");
 
 
     @Override
@@ -40,7 +39,6 @@ public class TipeeeGG extends LabyModAddon {
         ConfigElement.init();
         this.getApi().registerForgeListener(chatQueueHandler);
         this.getApi().registerForgeListener(donationQueueHandler);
-        this.getApi().getEventManager().registerOnIncomingPacket(new RealNameHandler());
         this.getApi().getEventManager().register(new ChatReceiveHandler());
         this.getApi().getEventManager().register(new CommandsHandler());
     }
@@ -62,7 +60,9 @@ public class TipeeeGG extends LabyModAddon {
         list.add(new HeaderElement("§a§l%a% -> $ amount"));
         list.add(new HeaderElement("§3§lleave field blank to disable the field's functionality completely."));
 
-        list.add(new BooleanElement("Enabled", new ControlElement.IconData(Material.LEVER),(a)->{isEnabled=a;},isEnabled));
+        list.add(new BooleanElement("Enabled", new ControlElement.IconData(Material.LEVER), (a) -> {
+            isEnabled = a;
+        }, isEnabled));
         NumberElement conversionRateElement = new NumberElement("?$ = 1EUR", new ControlElement.IconData(Material.GOLD_NUGGET), conversionRate.getValue());
         conversionRateElement.setMinValue(1);
         conversionRateElement.addCallback((v) -> {
@@ -86,14 +86,13 @@ public class TipeeeGG extends LabyModAddon {
         }));
 
         list.add(new HeaderElement("§4§lAPI-Settings"));
-        list.add(new StringElement("ApiName",new ControlElement.IconData(Material.REDSTONE_TORCH_ON),apiName.getValue(),(v)->{
+        list.add(new StringElement("ApiName", new ControlElement.IconData(Material.REDSTONE_TORCH_ON), apiName.getValue(), (v) -> {
             apiName.setValue(v);
         }));
-        list.add(new PasswordElement("ApiKey",new ControlElement.IconData(Material.REDSTONE_TORCH_ON),apiKey.getValue(),(v)->{
+        list.add(new PasswordElement("ApiKey", new ControlElement.IconData(Material.REDSTONE_TORCH_ON), apiKey.getValue(), (v) -> {
             apiKey.setValue(v);
         }));
     }
-
 
 
 }

@@ -45,10 +45,14 @@ public class APIHandler {
     }
     public static String getName(String uuid) {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new URL("https://api.mojang.com/user/profiles/" + uuid.replace("-", "") + "/names").openStream()));
-            String line = bufferedReader.readLine();
-            return line.split("\"name\":\"")[line.split("\"name\":\"").length-1].split("\"")[0];
-
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new URL("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid.replace("-", "")).openStream()));
+            String line;
+            while((line = bufferedReader.readLine())!= null){
+                if(line.trim().startsWith("\"name\" : \"")){
+                    return line.trim().replaceFirst("\"name\" : \"","").replaceAll("\",","");
+                }
+            }
+            return null;
         } catch (IOException e) {
             e.printStackTrace();
             return null;

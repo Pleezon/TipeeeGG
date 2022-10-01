@@ -2,10 +2,12 @@ package de.techgamez.pleezon.utils.handler;
 
 import de.techgamez.pleezon.TipeeeGG;
 import de.techgamez.pleezon.utils.misc.Donation;
+import net.labymod.main.LabyMod;
 
 public class MoneyReceivedHandler {
     public static void onMoneyReceived(double amount, String playername){
         RealNameHandler.getRealName(playername,(name, isBlocked)->{
+
             if(name == null){
                 TipeeeGG.chatQueueHandler.addMessage(playername,parseMessage(TipeeeGG.errorMessage.getValue(),playername,amount));
                 TipeeeGG.chatQueueHandler.addPayment(playername,amount);

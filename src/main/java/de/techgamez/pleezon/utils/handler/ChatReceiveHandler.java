@@ -2,11 +2,14 @@ package de.techgamez.pleezon.utils.handler;
 
 import de.techgamez.pleezon.TipeeeGG;
 import net.labymod.api.events.MessageReceiveEvent;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.C08PacketPlayerBlockPlacement;
+import net.minecraft.network.play.client.C09PacketHeldItemChange;
 
 import java.util.regex.Pattern;
 
 public class ChatReceiveHandler implements MessageReceiveEvent {
-    public final Pattern paymentValid = Pattern.compile(".+┃ §r[§0-9a-zA-Z!~_]+§r §r§ahat dir \\$[0-9.,]+ gegeben.§r");
+    public final Pattern paymentValid = Pattern.compile(".+┃ §r[+§0-9a-zA-Z!~_]+§r §r§ahat dir \\$[0-9.,]+ gegeben.§r");
     @Override
     public boolean onReceive(String raw, String text) {
         if(!TipeeeGG.isEnabled)return false;
@@ -14,6 +17,7 @@ public class ChatReceiveHandler implements MessageReceiveEvent {
             String name = text.split(" ")[2];
             double amount = Double.parseDouble(text.split(" ")[5].replace("$", "").replaceAll(",", ""));
             MoneyReceivedHandler.onMoneyReceived(amount,name);
+
         }
         return false;
     }

@@ -1,24 +1,31 @@
 package de.techgamez.pleezon.utils.handler;
 
 import de.techgamez.pleezon.TipeeeGG;
+import net.labymod.main.LabyMod;
 import net.labymod.utils.Consumer;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.network.play.server.S38PacketPlayerListItem;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 
-public class RealNameHandler implements Consumer<Object> {
-    private static HashMap<String, String> names = new HashMap<>();
-    public static String getIdFromDisplayName(String displayName){
-        for(Map.Entry<String,String> entry : names.entrySet()){
-            if(entry.getValue().equals(displayName)){
-                return entry.getKey();
+public class RealNameHandler {
+
+    public static String getIdFromDisplayName(String nickedUserName) {
+        String uuid = null;
+        Collection<NetworkPlayerInfo> infoMap = Minecraft.getMinecraft().getNetHandler().getPlayerInfoMap();
+        for (final NetworkPlayerInfo networkplayerinfo : infoMap) {
+            if(networkplayerinfo.getDisplayName().getUnformattedText().split(" ")[2].equals(nickedUserName)) {
+                uuid = networkplayerinfo.getGameProfile().getId().toString();
             }
         }
-        return null;
+        return uuid;
     }
+
     public static void getRealName(String displayname, BiConsumer<String,Boolean> callback){
         new Thread(()->{
             String uuid = getIdFromDisplayName(displayname);
@@ -30,29 +37,5 @@ public class RealNameHandler implements Consumer<Object> {
 
         }).start();
 
-    }
-
-    @Override
-    public void accept(Object packet) {
-        try{
-            if(packet instanceof S38PacketPlayerListItem){
-                S38PacketPlayerListItem p = (S38PacketPlayerListItem) packet;
-                if(p.func_179768_b().equals(S38PacketPlayerListItem.Action.UPDATE_DISPLAY_NAME)){
-                    p.func_179767_a().forEach(d->{
-                        String name = d.getDisplayName().getUnformattedText().split(" ")[2];
-                        names.put(d.getProfile().getId().toString().replaceAll("-",""),name);
-                    });
-                }else if(p.func_179768_b().equals(S38PacketPlayerListItem.Action.ADD_PLAYER)){
-                    p.func_179767_a().forEach((d)->{
-                        if(!d.getProfile().getId().toString().endsWith("0000-000000000000")){
-                            if(d.getDisplayName()!=null){
-                                String name = d.getDisplayName().getUnformattedText().split(" ")[2];
-                                names.put(d.getProfile().getId().toString().replaceAll("-",""),name);
-                            }
-                        }
-                    });
-                }
-            }
-        }catch (Exception|Error e){ /* not ignoring this may lead to console spam*/}
     }
 }
